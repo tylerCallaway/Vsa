@@ -22,25 +22,25 @@
 # Part II:
 # This program asks the user for his/her name and birth month.
 # Then, it prints a sentence that says the number of days and months until their birthday
-#f
+
 current_day= 11
 current_month= 6
 
-month = raw_input("Please state your birth month by number.")
-day = raw_input("Please state the day of your birth.")
-if month > current_month
-    month_till= raw_input(month-current_month)
-    if month < current_month
-        month_till=raw_input(current_month-month)
+month = int(raw_input("Please state your birth month by number."))
+day = int(raw_input("Please state the day of your birth."))
+if month > current_month:
+    month_till= (month-current_month)
+else:
+    month_till=(current_month-month)
 
-if day>current_day
-    day_till=raw_input(day-current_day)
-    else day = current_day
-    day_till=raw_input(day-current_day)
-    else day_till= raw_input(current_day-day)
+if day>current_day:
+    day_till=(day-current_day)
+elif day<current_day:
+    day_till= (current_day-day)
+else:
+    day_till=(day-current_day)
 
-print()
-
-
+print("Your birthday is ") + str (month_till) + " months away."
+print("Your birthday is ") + str (day_till) + " days away."
 
 # If you complete extensions, describe your extensions here!
