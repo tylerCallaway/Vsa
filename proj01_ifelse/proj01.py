@@ -7,21 +7,20 @@
 # This program asks the user for his/her name and grade.
 #Then, it prints out a sentence that says the number of years until they graduate.
 
-#name = (raw_input("What is your name?"))
-#grade= int(raw_input("What grade are you in?"))
+name = (raw_input("What is your name?"))
+grade= int(raw_input("What grade are you in?"))
 
-#print str(name) + ", you have "+ str(12- grade) + " years left in school"
+print str(name) + ", you have "+ str(12- grade) + " years left in school"
 
+name= (raw_input("What is your name?"))
+name= name[0].upper() + name [1:100].lower()
 
-#name= (raw_input("What is your name?"))
-#name= name[0].upper() + name [1:100].lower()
-
-#print "Your name is " + str(name)
-
+print "Your name is " + str(name)
 
 # Part II:
 # This program asks the user for his/her name and birth month.
 # Then, it prints a sentence that says the number of days and months until their birthday
+
 
 current_day= 11
 current_month= 6
@@ -44,3 +43,13 @@ print("Your birthday is ") + str (month_till) + " months away."
 print("Your birthday is ") + str (day_till) + " days away."
 
 # If you complete extensions, describe your extensions here!
+
+age= int(raw_input("What is your age?"))
+if age < 3:
+    print "You can watch G rated movies."
+else:
+    print "You can watch PG movies."
+elif age <17 or age >13:
+    print "You can watch PG-13 movies."
+elif age > 17:
+print "You can watch R rated movies."
