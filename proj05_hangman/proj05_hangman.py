@@ -43,6 +43,49 @@ def choose_word(wordlist):
 # actually load the dictionary of words and point to it with 
 # the wordlist variable so that it can be accessed from anywhere
 # in the program
-wordlist = load_words()
 
 # your code begins here!
+wordlist = load_words()
+empty = []
+word = choose_word(wordlist)
+stop = 0
+for letter in word:
+    empty.append(letter)
+worde = ["_"] * len(empty)
+abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+a = 8
+print "Welcome to Tyler and Abhi's Hangman Game!"
+length = len(word)
+print "I am thinking of a word that is " + str(length) + " letters long."
+while stop == 0:
+    print(worde)
+    print "You have " + str(a) + " incorrect guesses left."
+    print "Available letters: " + str(abc)
+    guess = raw_input("Please guess a letter.")
+    abc.remove(guess)
+    correct = False
+    counter = 0
+    for letter in word:
+        if guess == letter:
+            worde[counter] = guess
+            correct = True
+            print "Correct!"
+        counter = counter + 1
+    if correct == False:
+            a = a - 1
+            print "That's incorrect!"
+    if empty == worde:
+        stop = 1
+        print worde
+        print "You guessed the word!"
+    if a == 0:
+        stop = 1
+        print"You lost!"
+        print "The word was " + word + "!"
+
+
+
+
+
+
+
