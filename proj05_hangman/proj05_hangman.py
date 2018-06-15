@@ -34,6 +34,8 @@ def choose_word(wordlist):
     wordlist (list): list of words (strings)
 
     Returns a word from wordlist at random
+
+    
     """
     return random.choice(wordlist)
 
@@ -53,9 +55,21 @@ for letter in word:
     empty.append(letter)
 worde = ["_"] * len(empty)
 abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-a = 8
 print "Welcome to Tyler and Abhi's Hangman Game!"
 length = len(word)
+difficulty = raw_input("Select a difficulty. (easy, normal, hard, or extreme)")
+if difficulty == "easy":
+    a = 11
+elif difficulty == "normal":
+    a = 9
+elif difficulty == "hard":
+    a = 7
+elif difficulty == "difficulty":
+    a = 5
+else:
+    a = 3
+    difficulty = "impossible"
+print "Your difficulty is " + difficulty + "."
 print "I am thinking of a word that is " + str(length) + " letters long."
 while stop == 0:
     print(worde)
@@ -76,16 +90,9 @@ while stop == 0:
             print "That's incorrect!"
     if empty == worde:
         stop = 1
-        print worde
         print "You guessed the word!"
+        print "The word was " + word + "!"
     if a == 0:
         stop = 1
-        print"You lost!"
+        print "You lost!"
         print "The word was " + word + "!"
-
-
-
-
-
-
-
